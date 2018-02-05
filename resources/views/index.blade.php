@@ -29,7 +29,7 @@
                     <h2>{{ $user->firstName .' '. $user->surname }}</h2>
                     <p>Gender: {{$user->gender}} <br>
                         Age: {{$user->age}}</p>
-                    <p><a class="btn btn-secondary" href="/users/{{$user->id}}" role="button">{{ $user->firstName . '\'s' }} details &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="/users/{{$user->id}}" role="button">{{ $user->firstName . '\'s' }} details </a></p>
                 </div><!-- /.col-lg-4 -->
             @endforeach()
         </div><!-- /.row -->

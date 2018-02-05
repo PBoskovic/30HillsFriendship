@@ -11,27 +11,9 @@
                 </div>
             </div>
             {{--FRIENDS OF USER--}}
-            <div class="col-lg-12"><h3>List of {{$user->firstName}}'s friends</h3></div>
-
+            <div class="col-lg-12 custom"><h3>List of {{$user->firstName}}'s friends</h3></div>
             @foreach($user->friends as $friend)
-                <div class="col-lg-4">
-                    <a href="/users/{{$friend->id}}">
-                        @if($friend->gender=='male')
-                            <img class="rounded-circle" src="/img/cap.png" alt="Generic placeholder image" width="140"
-                                 height="140">
-                        @endif
-                        @if($friend->gender=='female')
-                            <img class="rounded-circle" src="/img/female.png" alt="Generic placeholder image"
-                                 width="140"
-                                 height="140">
-                        @endif
-                    </a>
-                    <h2>{{ $friend->firstName .' '. $friend->surname }}</h2>
-                    <p>Gender: {{$friend->gender}} <br>
-                        Age: {{$friend->age}}</p>
-                    <p><a class="btn btn-secondary" href="/users/{{$friend->id}}"
-                          role="button">{{ $friend->firstName . '\'s' }} details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
+                @include('layouts.friends')
             @endforeach
 
             {{--FRIENDS OF FRIENDS--}}
@@ -42,35 +24,14 @@
             {{--{{ $friend->firstName . ', ' }}--}}
             {{--@endforeach--}}
             {{--</li>--}}
-
-            <div class="col-lg-12">
+            <div class="col-lg-12 custom">
                 <h3> List of friends of {{$user->firstName}}'s friend</h3>
             </div>
-
             @foreach($user->friends as $friend)
-
+              <?php  $listf[]=$friend->id; ?>
                 @foreach($friend->friends as $fof)
-                    @if($fof->id != $user->id )
-
-                        <div class="col-lg-4">
-                            <a href="/users/{{$fof->id}}">
-                                @if($fof->gender=='male')
-                                    <img class="rounded-circle" src="/img/cap.png" alt="Generic placeholder image"
-                                         width="140"
-                                         height="140">
-                                @endif
-                                @if($fof->gender=='female')
-                                    <img class="rounded-circle" src="/img/female.png" alt="Generic placeholder image"
-                                         width="140"
-                                         height="140">
-                                @endif
-                            </a>
-                            <h2>{{ $fof->firstName .' '. $fof->surname }}</h2>
-                            <p>Gender: {{$fof->gender}} <br>
-                                Age: {{$fof->age}}</p>
-                            <p><a class="btn btn-secondary" href="/users/{{$fof->id}}"
-                                  role="button">{{ $fof->firstName . '\'s' }} details &raquo;</a></p>
-                        </div><!-- /.col-lg-4 -->
+                    @if($fof->id != $user->id && $fof->id!= $friend->id && !in_array($fof->id,$listf))
+                        @include('layouts.friendsOfFriends')
                     @endif
                 @endforeach
             @endforeach
