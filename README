@@ -1,0 +1,7 @@
+Create a database and set db credentials
+
+Run php artisan migrate from terminal
+
+Run php artisan db:seed from terminal
+
+Run the app
