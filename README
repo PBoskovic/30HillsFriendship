@@ -1,4 +1,4 @@
-Create a database and set db credentials
+Create a database and set db credentials in .env file
 
 Run php artisan migrate from terminal
 
