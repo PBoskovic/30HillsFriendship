@@ -27,8 +27,12 @@
             <div class="col-lg-12 custom">
                 <h3> List of friends of {{$user->firstName}}'s friend</h3>
             </div>
+
+            <?php  $listf = []; ?>
             @foreach($user->friends as $friend)
-              <?php  $listf[]=$friend->id; ?>
+                <?php  $listf[] = $friend->id; ?>
+            @endforeach
+            @foreach($user->friends as $friend)
                 @foreach($friend->friends as $fof)
                     @if($fof->id != $user->id && $fof->id!= $friend->id && !in_array($fof->id,$listf))
                         @include('layouts.friendsOfFriends')
