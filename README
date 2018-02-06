@@ -1,6 +1,8 @@
-
-
 Create a database and set db credentials in .env file
+
+To install all laravel dependencies run composer install from terminal
+
+Generate application key with php artisan key:generate
 
 Run php artisan migrate from terminal
 
