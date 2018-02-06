@@ -35,39 +35,4 @@
         </div><!-- /.row -->
     </div>
 
-    {{--<div class="my-3 p-3 bg-white rounded box-shadow">--}}
-    {{--<h6 class="border-bottom border-gray pb-2 mb-0">All users</h6>--}}
-    {{--@foreach($users as $user)--}}
-    {{--<div class="media text-muted pt-3">--}}
-
-    {{--<img src="{{ asset('/img/thumb.svg') }}" alt="" class="mr-2 rounded">--}}
-    {{--<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">--}}
-    {{--<a href="/users/{{$user->id}}">--}}
-
-    {{--<strong class="d-block text-gray-dark">{{$user->firstName .' '.$user->surname}}</strong>--}}
-    {{--</a>--}}
-    {{--Gender: {{$user->gender}} <br>--}}
-    {{--Age: {{$user->age}}--}}
-
-    {{--</p>--}}
-    {{--</div>--}}
-    {{--@endforeach--}}
-
-    {{--</div>--}}
-
 @endsection
-{{--@foreach($users as $user)--}}
-{{--<a>--}}
-{{--<a href="/users/{{$user['id']}}">--}}
-{{--<li>{{ $user->firstName . ' ' . $user->surname }}</li>--}}
-{{--</a>--}}
-{{--<li>Age: {{ $user->age }}</li>--}}
-{{--<li>Gender: {{ $user->gender }}</li>--}}
-{{--<hr>--}}
-{{--</ul>--}}
-
-
-{{--@endforeach--}}
-
-{{--</body>--}}
-{{--</html>--}}
